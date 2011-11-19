@@ -16,7 +16,9 @@ guard 'cucumber', :cli => '--drb --format progress --no-profile' do
   watch(%r{^features/.+\.feature$})
   watch(%r{^features/support/.+$})          { 'features' }
   watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'features' }
-	watch(%r{^app/.+\.rb$}) {'features'}
+	watch(%r{^config/routes.rb$}) {'features'}
+  watch(%r{^app/(.+)\.rb$}) {'features'}
+  watch(%r{^app/(.*)(\.erb|\.haml)$}) {'features'}
 end
 
 guard 'rspec', :version => 2, :cli => "--drb" do
