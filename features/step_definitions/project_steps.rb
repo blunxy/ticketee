@@ -24,3 +24,14 @@ Then /^I should see the new project's title$/ do
   page.should have_content("TextMate 2 - Projects - Ticketee")
 end
 
+When /^I create a project without a name$/ do
+  click_button('Create Project')
+end
+
+Then /^I should see a warning telling me that the project wasn't created$/ do
+  page.should have_content("Project has not been created.") 
+end
+
+Then /^I should see the reason why$/ do
+  page.should have_content("Name can't be blank")
+end
