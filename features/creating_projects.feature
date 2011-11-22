@@ -8,3 +8,5 @@ Feature: Creating projects
 		When I navigate to the new project creation page
 		And I create a new project	
 		Then I should be shown the project creation verification
+		And I should be on the newly created project page
+		And I should see the new project's title

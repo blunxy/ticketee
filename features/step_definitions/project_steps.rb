@@ -14,3 +14,13 @@ end
 Then /^I should be shown the project creation verification$/ do
   page.should have_content('Project has been created.')
 end
+
+Then /^I should be on the newly created project page$/ do
+    new_project_path = project_path(Project.find_by_name!("TextMate 2"))
+    visit(new_project_path)
+end
+
+Then /^I should see the new project's title$/ do
+  page.should have_content("TextMate 2 - Projects - Ticketee")
+end
+
