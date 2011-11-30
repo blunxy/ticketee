@@ -46,3 +46,16 @@ end
 Then /^I should see the reason why$/ do
   page.should have_content("Name can't be blank")
 end
+
+When /^I fill in "([^"]*)" with "([^"]*)"$/ do |field, entry|
+ fill_in(field, :with => entry)
+end
+
+When /^I press "([^"]*)"$/ do |button|
+  click_button(button)
+end 
+
+Then /^I should see "([^"]*)"$/ do |page_content|
+  page.should have_content(page_content)
+end
+
