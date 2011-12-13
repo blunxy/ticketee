@@ -32,6 +32,10 @@ Then /^I should see the new project's title$/ do
   page.should have_content("TextMate 2 - Projects - Ticketee")
 end
 
+Then /^I should not see "([^"]*)"$/ do |arg1|
+  page.should_not have_content(arg1)
+end
+
 Given /^there is a project called "([^"]*)"$/ do |name|
  Factory(:project, :name => name) 
 end

@@ -12,7 +12,7 @@ Feature: Creating projects
 		Then I should be shown the project creation verification
 		And I should be on the newly created project page
 		And I should see the new project's title
-
+	
 	Scenario: Creating a project without a name
 		And I create a project without a name
 		Then I should see a warning telling me that the project wasn't created
