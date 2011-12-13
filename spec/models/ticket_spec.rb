@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Project do
+describe Ticket do
 end

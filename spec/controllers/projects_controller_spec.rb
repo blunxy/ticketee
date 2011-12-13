@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+ 
 describe ProjectsController do
 
   it "displays an error for a missing project" do
