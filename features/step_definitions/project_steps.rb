@@ -37,7 +37,7 @@ Then /^I should not see "([^"]*)"$/ do |arg1|
 end
 
 Given /^there is a project called "([^"]*)"$/ do |name|
- Factory(:project, :name => name) 
+ @project = Factory(:project, :name => name) 
 end
 When /^I create a project without a name$/ do
   click_button('Create Project')
