@@ -63,3 +63,22 @@ Then /^I should see "([^"]*)"$/ do |page_content|
   page.should have_content(page_content)
 end
 
+Then /^I should see the "([^"]*)" link$/ do |link_name|
+  page.should(have_css("a", :text => link_name),
+                       "Expected to see a #{link_name.inspect} link, but did not.")
+end
+
+Then /^I should not see the "([^"]*)" link$/ do |link_name|
+  page.should_not(have_css("a", :text => link_name),
+                       "Expected to not see a #{link_name.inspect} link, but did.")
+end
+
+Then /^"([^"]*)" should be "([^"]*)"$/ do |link, visibility|
+  if visibility == "visible"
+    step ("I should see the \"#{link}\" link") 
+  else
+    step ("I should not see the \"#{link}\" link") 
+  end
+  
+end
+
