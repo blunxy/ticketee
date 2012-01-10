@@ -2,12 +2,8 @@ require 'spec_helper'
  
 describe ProjectsController do
 
-  let(:user) do
-    user = Factory(:user)
-    user.confirm!
-    user
-  end
-
+  let(:user) { create_user! } # in spec/support/seed_helpers.rb
+ 
   let(:project) { Factory(:project) }
 
   context "standard users" do
