@@ -1,3 +1,7 @@
+Then /^show me the page$/ do
+  puts page.html 
+end
+ 
 Given /^there are the following users:$/ do |table|
   table.hashes.each do |attributes|
     unconfirmed = attributes.delete("unconfirmed") == "true"
@@ -25,4 +29,6 @@ Given /^I am signed in as "([^"]*)"$/ do |email|
   end 
 end
 
-
+When /^I check "([^"]*)"$/ do |checkbox_name|
+  check(checkbox_name)
+end
